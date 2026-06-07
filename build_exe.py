@@ -1,6 +1,6 @@
 """
 Setup script to build the Fortnite Matchmaking Bot into a standalone executable
-Run: pyinstaller build_exe.py
+Run: python build_exe.py
 """
 
 import PyInstaller.__main__
@@ -20,6 +20,9 @@ PyInstaller.__main__.run([
     '--add-data=bot_icon.ico:.',
     '--hidden-import=fortnitepy',
     '--hidden-import=customtkinter',
+    '--hidden-import=darkdetect',
+    '--collect-all=customtkinter',
+    '--collect-all=darkdetect',
     f'--distpath={script_dir}/dist',
     f'--buildpath={script_dir}/build',
     f'--specpath={script_dir}',
